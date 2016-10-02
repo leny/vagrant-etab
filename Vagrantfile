@@ -21,4 +21,5 @@ Vagrant.configure("2") do |config|
 
   config.vm.provision :shell, :path => "provision/00-update-system.sh", :keep_color => true
   config.vm.provision :shell, :path => "provision/10-nodejs.sh", :keep_color => true
+  config.vm.provision :shell, :path => "provision/20-mongodb.sh", :keep_color => true
 end

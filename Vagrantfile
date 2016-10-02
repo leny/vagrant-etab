@@ -20,4 +20,5 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.provision :shell, :path => "provision/00-update-system.sh", :keep_color => true
+  config.vm.provision :shell, :path => "provision/10-nodejs.sh", :keep_color => true
 end

@@ -9,4 +9,9 @@ sudo apt-get update
 sudo apt-get upgrade -yq
 
 sudo apt-get install -yq linux-headers-$(uname -r) build-essential dkms tcl
-sudo locale-gen fr_BE.UTF-8
+
+locale-gen en_US en_US.UTF-8
+locale-gen fr_BE fr_BE.UTF-8
+dpkg-reconfigure locales
+
+sudo apt-get install -y glances

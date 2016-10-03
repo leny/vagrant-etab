@@ -9,4 +9,4 @@ apt-get install -y nginx-extras
 cp /tmp/nginx/nginx.conf /etc/nginx/nginx.conf
 cp /tmp/nginx/host.conf /etc/nginx/sites-available/default
 
-service nginx start
+service nginx restart

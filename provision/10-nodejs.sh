@@ -6,6 +6,6 @@
 # started at 02/09/2016
 
 curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
-sudo apt-get install -y nodejs
+apt-get install -y nodejs
 
-sudo npm install -g gulp grunt node-inspector forever
+npm install -g gulp grunt node-inspector supervisor

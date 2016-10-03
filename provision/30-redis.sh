@@ -12,14 +12,14 @@ cd redis-stable
 
 make
 make test
-sudo make install
+make install
 
-sudo mkdir /etc/redis
-sudo cp /tmp/redis-stable/redis.conf /etc/redis
+mkdir /etc/redis
+cp /tmp/redis-stable/redis.conf /etc/redis
 sed -e "s/supervised no/supervised systemd/g" -i /etc/redis/redis.conf
 sed -e "s/dir .\//dir \/var\/lib\/redis/g" -i /etc/redis/redis.conf
 
-sudo echo -en "
+echo -en "
 [Unit]
 Description=Redis In-Memory Data Store
 After=network.target
@@ -35,10 +35,10 @@ Restart=always
 WantedBy=multi-user.target
 " > /etc/systemd/system/redis.service
 
-sudo adduser --system --group --no-create-home redis
-sudo mkdir /var/lib/redis
-sudo chown redis:redis /var/lib/redis
-sudo chmod 770 /var/lib/redis
+adduser --system --group --no-create-home redis
+mkdir /var/lib/redis
+chown redis:redis /var/lib/redis
+chmod 770 /var/lib/redis
 
-sudo systemctl start redis
-sudo systemctl enable redis
+systemctl start redis
+systemctl enable redis

@@ -24,5 +24,21 @@ ExecStart=/usr/bin/mongod --quiet --config /etc/mongod.conf
 WantedBy=multi-user.target
 " > /etc/systemd/system/mongodb.service
 
-systemctl start mongodb
+echo -en "# mongod.conf
+
+storage:
+  dbPath: /var/lib/mongodb
+  journal:
+    enabled: true
+
+systemLog:
+  destination: file
+  logAppend: true
+  path: /var/log/mongodb/mongod.log
+
+net:
+  port: 27017
+" > /etc/mongod.conf
+
+systemctl restart mongodb
 systemctl enable mongodb

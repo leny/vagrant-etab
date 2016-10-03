@@ -19,8 +19,15 @@ Vagrant.configure("2") do |config|
     vb.customize ["modifyvm", :id, "--ostype", "Ubuntu_64"]
   end
 
-  config.vm.provision :shell, :path => "provision/00-update-system.sh", :keep_color => true
-  config.vm.provision :shell, :path => "provision/10-nodejs.sh", :keep_color => true
-  config.vm.provision :shell, :path => "provision/20-mongodb.sh", :keep_color => true
-  config.vm.provision :shell, :path => "provision/30-redis.sh", :keep_color => true
+  config.vm.provision "shell", path: "provision/00-update-system.sh", keep_color: true
+
+  config.vm.provision "shell", path: "provision/10-nodejs.sh", keep_color: true
+
+  config.vm.provision "shell", path: "provision/20-mongodb.sh", keep_color: true
+
+  config.vm.provision "shell", path: "provision/30-redis.sh", keep_color: true
+
+  config.vm.provision "file", source: "provision/nginx/nginx.conf", destination: "/tmp/nginx/nginx.conf"
+  config.vm.provision "file", source: "provision/nginx/host.conf", destination: "/tmp/nginx/host.conf"
+  config.vm.provision "shell", path: "provision/40-nginx.sh", keep_color: true
 end

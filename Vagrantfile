@@ -30,4 +30,6 @@ Vagrant.configure("2") do |config|
   config.vm.provision "file", source: "provision/nginx/nginx.conf", destination: "/tmp/nginx/nginx.conf"
   config.vm.provision "file", source: "provision/nginx/host.conf", destination: "/tmp/nginx/host.conf"
   config.vm.provision "shell", path: "provision/40-nginx.sh", keep_color: true
+
+  config.vm.provision "shell", path: "provision/50-aliases.sh", keep_color: true
 end

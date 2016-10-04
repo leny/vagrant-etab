@@ -10,6 +10,20 @@
 
 * * *
 
+## Box usage
+
+Before starting, you need to add the box to your local vagrant box library with the following command :
+
+    vagrant box add --name leny/etab http://vagrant.flatland.be/etab-2016-10-04.box
+
+After that, go to your project and type :
+
+    vagrant init leny/etab
+
+You can customize your `Vagrantfile` as you wish, according to the config of the box components mentionned before.
+
+* * *
+
 ## Box Content
 
 ### Base box
@@ -64,14 +78,8 @@ Installed version: `3.4.2`
 
 * * *
 
-## Box usage
+## Building
 
-Before starting, you need to add the box to your local vagrant box library with the following command :
+Commands to build & package the box from scratch.
 
-    vagrant box add leny/etab
-
-After that, go to your project and type :
-
-    vagrant init leny/etab
-
-You can customize your `Vagrantfile` as you wish, according to the config of the box components mentionned before.
+    vagrant package --output etab-$(date +%F).box

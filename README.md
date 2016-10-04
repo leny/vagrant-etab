@@ -14,7 +14,9 @@
 
 ### Base box
 
-Ubuntu 16.04 LTS
+Ubuntu 14.04 LTS
+
+> **Note:** the ubuntu/xenial64 vagrant base box had [strange bugs](https://bugs.launchpad.net/cloud-images/+bug/1569237) when used as base for packaging.
 
 ### Provider
 

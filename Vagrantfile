@@ -34,4 +34,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", name: "Install & configure nginx", path: "provision/40-nginx.sh", keep_color: true
 
   config.vm.provision "shell", name: "Add aliases", path: "provision/50-aliases.sh", keep_color: true
+
+  # this must be run only when packaging
+  config.vm.provision "shell", name: "Cleaning VM for packaging", path: "provision/60-cleaning.sh", keep_color: true
 end

@@ -1,6 +1,6 @@
 # leny/vagrant-etab
 #
-# /provision/50-aliases.sh - Vagrant provision script: bahs aliases
+# /provision/50-aliases.sh - Vagrant provision script: bash aliases
 #
 # coded by leny@flatLand!
 # started at 03/09/2016
@@ -17,6 +17,6 @@ alias ...='cd ~-'
 alias work='supervisor -w bin,static -e js,jade,pug -i node_modules,src,static'
 
 cd /vagrant
-" >> /home/ubuntu/.bashrc
+" >> /home/vagrant/.bashrc
 
 echo "Done."

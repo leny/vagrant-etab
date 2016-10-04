@@ -17,6 +17,7 @@ make install
 mkdir /etc/redis
 cp /tmp/redis-stable/redis.conf /etc/redis
 sed -e "s/supervised no/supervised systemd/g" -i /etc/redis/redis.conf
+sed -e "s/bind 127.0.0.1/bind 0.0.0.0/g" -i /etc/redis/redis.conf
 sed -e "s/dir .\//dir \/var\/lib\/redis/g" -i /etc/redis/redis.conf
 
 echo -en "
@@ -40,5 +41,5 @@ mkdir /var/lib/redis
 chown redis:redis /var/lib/redis
 chmod 770 /var/lib/redis
 
-systemctl start redis
+systemctl restart redis
 systemctl enable redis

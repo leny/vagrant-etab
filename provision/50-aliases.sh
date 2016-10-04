@@ -5,7 +5,7 @@
 # coded by leny@flatLand!
 # started at 03/09/2016
 
-echo "
+echo -en "
 alias c='clear'
 alias tree=\"find . | sed 's/[^/]*\//|   /g;s/| *\([^| ]\)/+--- \1/'\"
 alias l='ls -Falh'
@@ -18,3 +18,5 @@ alias work='supervisor -w bin,static -e js,jade,pug -i node_modules,src,static'
 
 cd /vagrant
 " >> /home/ubuntu/.bashrc
+
+echo "Done."

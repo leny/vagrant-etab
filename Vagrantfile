@@ -10,6 +10,8 @@ Vagrant.configure("2") do |config|
 
   config.vm.network "private_network", ip: "192.168.33.10"
 
+  config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'" # cf. https://github.com/mitchellh/vagrant/issues/1673#issuecomment-28288042
+
   config.vm.provider "virtualbox" do |vb|
     vb.name = "vagrant-etab"
     vb.customize ["modifyvm", :id, "--memory", "2048"]
